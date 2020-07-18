@@ -4,7 +4,7 @@ function exportCanvasAsPNG(id, fileName) {
 
     var MIME_TYPE = "image/png";
 
-    var imgURL = canvasElement.toDataURL(MIME_TYPE);
+    var imgURL = canvasElement.toDataURL(MIME_TYPE).replace("image/png", "image/octet-stream");
 
     var dlLink = document.createElement('a');
     dlLink.download = fileName;
