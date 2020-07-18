@@ -1,22 +1,4 @@
 function exportCanvasAsPNG(id, fileName) {
-
-    var canvasElement = document.getElementById(id);
-
-    var MIME_TYPE = "image/png";
-
-    var imgURL = canvasElement.toDataURL(MIME_TYPE).replace("image/png", "image/octet-stream");
-
-    var dlLink = document.createElement('a');
-    dlLink.download = fileName;
-    dlLink.href = imgURL;
-    dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
-
-    document.body.appendChild(dlLink);
-    dlLink.click();
-    document.body.removeChild(dlLink);
-}
-
-$(function() {
     var canvas = document.getElementById('canvas');
     var width = $('#img-certificate').width();
     var height = $('#img-certificate').height();
@@ -35,7 +17,20 @@ $(function() {
         ctx.fillText($('#surname').val(), Math.floor(width/3), Math.floor(height/2) + 20);
         ctx.fillText($('#name').val(), Math.floor(width/3), Math.floor(height/2) + 100);
     });
-    $('button').click(function(){
-        exportCanvasAsPNG('canvas', 'certificate.png')
-    });
+
+    var canvasElement = document.getElementById(id);
+    var MIME_TYPE = "image/png";
+    var imgURL = canvasElement.toDataURL(MIME_TYPE).replace("image/png", "image/octet-stream");
+    var dlLink = document.createElement('a');
+    dlLink.download = fileName;
+    dlLink.href = imgURL;
+    dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
+
+    document.body.appendChild(dlLink);
+    dlLink.click();
+    document.body.removeChild(dlLink);
+}
+
+$('button').click(function(){
+    exportCanvasAsPNG('canvas', 'certificate.png')
 });
