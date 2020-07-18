@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="shortcut icon" href="img/favicon.ico">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/main.css">
+
+        <title>Шифры</title>
+    </head>
+    <body class="noisy">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Задание</a>
+                    </li>
+
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="ciphers.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Шифры
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="ciphers.html#caesar">Шифр Цезаря</a>
+                            <a class="dropdown-item" href="ciphers.html#binary">Бинарные коды</a>
+                            <a class="dropdown-item" href="ciphers.html#morse">Азбука Морзе</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="tools.html">Инструменты</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="pass.html">Ввести пароль</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+        <div class="frame mt-5">
+            <div class="piece output"></div>
+
+            <div>
+                <a name="caesar"></a>
+                <h2>
+                    Шифр Цезаря
+                </h2>
+                <p>
+                Шифр Цезаря, также известный как шифр сдвига, код Цезаря или сдвиг Цезаря — один из самых простых и наиболее широко известных методов шифрования.
+                </p>
+                <p>
+                Это вид шифра подстановки, в котором каждый символ в открытом тексте заменяется символом, находящимся на некотором постоянном числе позиций левее или правее него в алфавите. Например, в шифре со сдвигом вправо на 3, А была бы заменена на Г, Б станет Д, и так далее.
+                </p>
+                <p>
+                Шифр назван в честь римского полководца Гая Юлия Цезаря, использовавшего его для секретной переписки со своими генералами.
+                </p>
+                <div class="d-flex justify-content-center">
+                    <img alt="" src="img/320px-Caesar3.svg.png" decoding="async">
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <a name="binary"></a>
+                <h2>
+                    Бинарные коды
+                </h2>
+                <p>
+                Двоичный код — это способ представления данных в виде кода, в котором каждый разряд принимает одно из двух возможных значений, обычно обозначаемых цифрами 0 и 1. Разряд в этом случае называется двоичным разрядом.
+                </p>
+                <p>
+                В случае обозначения цифрами «0» и «1», возможные состояния двоичного разряда наделяются качественным соотношением «1» > «0» и количественными значениями чисел «0» и «1».
+                </p>
+                <p>
+                Двоичный код может быть непозиционным и позиционным. Позиционный двоичный код лежит в основе двоичной системы счисления, широко распространенной в современной цифровой технике.
+                </p>
+                <div class="d-flex justify-content-center">
+                    <img alt="" src="img/Wikipedia_in_binary.gif" decoding="async" class="bg-light" width="300px">
+                </div>
+            </div>
+
+            <div class="mt-5 mb-5">
+                <a name="morse"></a>
+                <h2>
+                    Азбука Морзе
+                </h2>
+                <p>
+                Азбука Морзе, «Морзянка», Код Морзе — способ знакового кодирования, представление букв алфавита, цифр, знаков препинания и других символов последовательностью сигналов: длинных (тире) и коротких (точек). За единицу времени принимается длительность одной точки. Длительность тире равна трём точкам. Пауза между элементами одного знака — одна точка, между знаками в слове — 3 точки, между словами — 7 точек. Назван в честь американского изобретателя и художника Сэмюэля Морзе.
+                </p>
+                <div class="d-flex justify-content-center row">
+                    <img alt="" src="img/800px-International_Morse_Code.svg.png" decoding="async" class="col-6 col-lg-3 bg-light">
+                </div>
+            </div>
+
+            <div class="piece scanlines noclick"></div>
+            <div class="piece glow noclick"></div>
+        </div>
+
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <!-- Optional JavaScript -->
+    </body>
+</html>
