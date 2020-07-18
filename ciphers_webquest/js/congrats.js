@@ -16,25 +16,26 @@ function exportCanvasAsPNG(id, fileName) {
     document.body.removeChild(dlLink);
 }
 
-var canvas = document.getElementById('canvas');
-var width = $('#img-certificate').width();
-var height = $('#img-certificate').height();
-ctx = canvas.getContext('2d');
-canvas.width = width;
-canvas.crossOrigin = "anonymous";
-canvas.height = height;
-ctx.drawImage($('#img-certificate').get(0), 0, 0);
-ctx.font = "50pt Verdana";
-$('#get-certificate').click(function(){
-    //redraw image
-    ctx.clearRect(0,0,canvas.width,canvas.height);
+$(function() {
+    var canvas = document.getElementById('canvas');
+    var width = $('#img-certificate').width();
+    var height = $('#img-certificate').height();
+    ctx = canvas.getContext('2d');
+    canvas.width = width;
+    canvas.crossOrigin = "anonymous";
+    canvas.height = height;
     ctx.drawImage($('#img-certificate').get(0), 0, 0);
-    //refill text
-    ctx.fillStyle = "#e55e5e";
-    ctx.fillText($('#surname').val(), Math.floor(width/3), Math.floor(height/2) + 20);
-    ctx.fillText($('#name').val(), Math.floor(width/3), Math.floor(height/2) + 100);
+    ctx.font = "50pt Verdana";
+    $('#get-certificate').click(function(){
+        //redraw image
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.drawImage($('#img-certificate').get(0), 0, 0);
+        //refill text
+        ctx.fillStyle = "#e55e5e";
+        ctx.fillText($('#surname').val(), Math.floor(width/3), Math.floor(height/2) + 20);
+        ctx.fillText($('#name').val(), Math.floor(width/3), Math.floor(height/2) + 100);
+    });
+    $('button').click(function(){
+        exportCanvasAsPNG('canvas', 'certificate.png')
+    });
 });
-$('button').click(function(){
-    exportCanvasAsPNG('canvas', 'certificate.png')
-});
-
