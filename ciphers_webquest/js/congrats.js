@@ -7,7 +7,7 @@ function exportCanvasAsPNG(fileName) {
     canvas.width = width;
     canvas.crossOrigin = "anonymous";
     canvas.height = height;
-    ctx.font = "50pt Verdana";
+    ctx.font = "50pt Sans";
 
     //redraw image
     ctx.clearRect(0,0,canvas.width,canvas.height);
